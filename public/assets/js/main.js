@@ -1,5 +1,5 @@
 /**
- * YSIT Genuine Parts - Master Frontend Application Engine
+ * YSIT Genuine Parts - Master Frontend Application Engine (Light Theme)
  * High-performance, reactive B2B automotive inquiry & RFQ system
  */
 
@@ -66,14 +66,15 @@ function initNavigation() {
     });
   });
 
-  // Sticky header background transition on scroll
+  // Sticky header background transition on scroll (Light Theme)
   window.addEventListener('scroll', () => {
     if (stickyNav) {
-      if (window.scrollY > 40) {
-        stickyNav.classList.add('bg-slate-950/95', 'shadow-2xl', 'backdrop-blur-md', 'border-b', 'border-slate-800');
-        stickyNav.classList.remove('bg-transparent');
+      if (window.scrollY > 30) {
+        stickyNav.classList.add('bg-white/95', 'shadow-md', 'backdrop-blur-md', 'border-b', 'border-slate-200');
+        stickyNav.classList.remove('bg-white');
       } else {
-        stickyNav.classList.remove('bg-slate-950/95', 'shadow-2xl', 'backdrop-blur-md');
+        stickyNav.classList.remove('shadow-md');
+        stickyNav.classList.add('bg-white');
       }
     }
 
@@ -114,7 +115,7 @@ function initTriRegionHubs() {
       if (!hubData) return;
 
       // Update active card styling
-      hubCards.forEach(c => c.classList.remove('region-card-active', 'border-red-600', 'bg-slate-900'));
+      hubCards.forEach(c => c.classList.remove('region-card-active', 'border-red-600', 'bg-red-50/50'));
       card.classList.add('region-card-active', 'border-red-600');
 
       // Render detail view
@@ -124,45 +125,45 @@ function initTriRegionHubs() {
 
   function renderHubDetail(hub) {
     const statsHtml = Object.entries(hub.stats).map(([k, v]) => `
-      <div class="bg-slate-900/90 border border-slate-800 rounded-lg p-3">
-        <div class="text-xs text-slate-400 uppercase tracking-wider">${k}</div>
-        <div class="text-base font-bold text-white mt-0.5">${v}</div>
+      <div class="bg-white border border-slate-200 shadow-sm rounded-xl p-3.5">
+        <div class="text-[11px] text-slate-500 uppercase tracking-wider font-semibold">${k}</div>
+        <div class="text-base font-black text-slate-900 mt-0.5">${v}</div>
       </div>
     `).join('');
 
     hubDetailView.innerHTML = `
-      <div class="bg-gradient-to-r from-slate-900 to-slate-950 border border-slate-800 rounded-xl p-6 relative overflow-hidden transition-all duration-300">
-        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-800 pb-4 mb-4">
+      <div class="bg-gradient-to-r from-slate-50 via-white to-slate-50 border border-slate-200 shadow-sm rounded-2xl p-6 sm:p-7 relative overflow-hidden transition-all duration-300">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-200 pb-4 mb-4">
           <div>
-            <div class="inline-flex items-center gap-2 px-2.5 py-1 rounded-full text-xs font-semibold bg-red-950/60 border border-red-700/50 text-red-400 mb-2">
-              <span class="w-1.5 h-1.5 rounded-full bg-red-500 animate-ping"></span>
+            <div class="inline-flex items-center gap-2 px-2.5 py-1 rounded-full text-xs font-bold bg-red-100 border border-red-200 text-red-700 mb-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-red-600 animate-ping"></span>
               ${hub.badge}
             </div>
-            <h4 class="text-xl font-bold text-white">${hub.country} — ${hub.city}</h4>
-            <p class="text-sm text-slate-300 mt-1">${hub.role}</p>
+            <h4 class="text-xl font-black text-slate-900">${hub.country} — ${hub.city}</h4>
+            <p class="text-xs sm:text-sm text-slate-600 font-medium mt-0.5">${hub.role}</p>
           </div>
           <div class="flex items-center gap-3">
-            <button onclick="prefillRfqDestination('${hub.city}')" class="px-4 py-2 text-xs font-semibold text-white bg-slate-800 hover:bg-red-600 border border-slate-700 rounded-lg transition-all flex items-center gap-1.5">
+            <button onclick="prefillRfqDestination('${hub.city}')" class="px-4 py-2.5 text-xs font-bold text-white bg-slate-900 hover:bg-red-600 rounded-xl transition-all flex items-center gap-1.5 shadow-sm">
               <span>Route RFQ to this Hub</span>
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
             </button>
           </div>
         </div>
         
-        <p class="text-sm text-slate-300 leading-relaxed mb-6">${hub.details}</p>
+        <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-6 font-normal">${hub.details}</p>
         
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-4">
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-5">
           ${statsHtml}
         </div>
 
-        <div class="flex flex-wrap items-center justify-between gap-2 pt-3 border-t border-slate-800/80 text-xs text-slate-400 font-mono-code">
+        <div class="flex flex-wrap items-center justify-between gap-2 pt-3 border-t border-slate-200 text-xs text-slate-500 font-mono-code">
           <div class="flex items-center gap-2">
-            <span class="text-slate-500">Facility Location:</span>
-            <span class="text-slate-200">${hub.address}</span>
+            <span class="text-slate-400">Facility Location:</span>
+            <span class="text-slate-800 font-semibold">${hub.address}</span>
           </div>
           <div class="flex items-center gap-2">
-            <span class="text-slate-500">Desk Dispatch:</span>
-            <span class="text-red-400">${hub.contact}</span>
+            <span class="text-slate-400">Desk Dispatch:</span>
+            <span class="text-red-600 font-bold">${hub.contact}</span>
           </div>
         </div>
       </div>
@@ -186,11 +187,10 @@ window.prefillRfqDestination = function(cityName) {
 };
 
 /* ==========================================================================
-   3. DYNAMIC RFQ & PART INQUIRY ENGINE (B2B NO-CATALOG SOLUTION)
+   3. DYNAMIC RFQ & PART INQUIRY ENGINE (Light Theme)
    ========================================================================== */
-// State of current quote basket
 const rfqState = {
-  activeTab: 'fast-search', // 'fast-search' | 'bulk-upload'
+  activeTab: 'fast-search',
   parts: [
     {
       id: 1,
@@ -235,16 +235,16 @@ function initRfqEngine() {
     rfqState.activeTab = tabKey;
     if (tabKey === 'fast-search') {
       tabBtnFast.classList.add('bg-red-600', 'text-white', 'shadow-md');
-      tabBtnFast.classList.remove('text-slate-400', 'hover:text-white');
+      tabBtnFast.classList.remove('text-slate-600', 'hover:text-slate-900', 'bg-slate-100');
       tabBtnBulk.classList.remove('bg-red-600', 'text-white', 'shadow-md');
-      tabBtnBulk.classList.add('text-slate-400', 'hover:text-white');
+      tabBtnBulk.classList.add('text-slate-600', 'hover:text-slate-900', 'bg-slate-100');
       tabContentFast.classList.remove('hidden');
       tabContentBulk.classList.add('hidden');
     } else {
       tabBtnBulk.classList.add('bg-red-600', 'text-white', 'shadow-md');
-      tabBtnBulk.classList.remove('text-slate-400', 'hover:text-white');
+      tabBtnBulk.classList.remove('text-slate-600', 'hover:text-slate-900', 'bg-slate-100');
       tabBtnFast.classList.remove('bg-red-600', 'text-white', 'shadow-md');
-      tabBtnFast.classList.add('text-slate-400', 'hover:text-white');
+      tabBtnFast.classList.add('text-slate-600', 'hover:text-slate-900', 'bg-slate-100');
       tabContentBulk.classList.remove('hidden');
       tabContentFast.classList.add('hidden');
     }
@@ -274,13 +274,13 @@ function initRfqEngine() {
 
       if (matches.length > 0) {
         oemSuggestions.innerHTML = matches.slice(0, 5).map(item => `
-          <div class="p-3 hover:bg-slate-800/80 cursor-pointer border-b border-slate-800 transition-colors" data-oem="${item.oem}">
+          <div class="p-3 hover:bg-slate-50 cursor-pointer border-b border-slate-100 transition-colors" data-oem="${item.oem}">
             <div class="flex items-center justify-between">
-              <span class="font-mono-code font-bold text-red-400 text-sm">${item.oem}</span>
-              <span class="text-xs px-2 py-0.5 rounded bg-slate-800 text-slate-300">${item.category}</span>
+              <span class="font-mono-code font-bold text-red-600 text-xs sm:text-sm">${item.oem}</span>
+              <span class="text-[11px] px-2 py-0.5 rounded bg-slate-100 text-slate-600 font-medium">${item.category}</span>
             </div>
-            <div class="text-xs text-white font-medium mt-1">${item.name}</div>
-            <div class="text-xs text-slate-400 mt-0.5">Fitment: ${item.models}</div>
+            <div class="text-xs text-slate-900 font-bold mt-1">${item.name}</div>
+            <div class="text-[11px] text-slate-500 mt-0.5">Fitment: ${item.models}</div>
           </div>
         `).join('');
         oemSuggestions.classList.remove('hidden');
@@ -300,8 +300,8 @@ function initRfqEngine() {
         });
       } else {
         oemSuggestions.innerHTML = `
-          <div class="p-3 text-xs text-slate-400">
-            <span class="text-slate-300 font-mono-code">${query}</span> not in quick-cache. You can still add any custom OEM/VIN number for factory quotation!
+          <div class="p-3 text-xs text-slate-500">
+            <span class="text-slate-800 font-mono-code font-semibold">${query}</span> not in quick-cache. You can still add any custom OEM/VIN number for factory quotation!
           </div>
         `;
         oemSuggestions.classList.remove('hidden');
@@ -390,29 +390,29 @@ function renderPartsBasket() {
   if (emptyNotice) emptyNotice.classList.add('hidden');
 
   container.innerHTML = rfqState.parts.map((p, idx) => `
-    <div class="bg-slate-900/90 border border-slate-800 hover:border-slate-700 rounded-lg p-3.5 flex flex-col sm:flex-row sm:items-center justify-between gap-3 transition-all">
+    <div class="bg-white border border-slate-200 hover:border-slate-300 shadow-sm rounded-xl p-3.5 flex flex-col sm:flex-row sm:items-center justify-between gap-3 transition-all">
       <div class="flex items-start gap-3">
-        <span class="w-6 h-6 rounded-full bg-slate-800 text-slate-300 text-xs font-mono-code font-bold flex items-center justify-center flex-shrink-0 mt-0.5">
+        <span class="w-6 h-6 rounded-full bg-slate-100 text-slate-700 text-xs font-mono-code font-bold flex items-center justify-center flex-shrink-0 mt-0.5">
           ${idx + 1}
         </span>
         <div>
           <div class="flex flex-wrap items-center gap-2">
-            <span class="font-mono-code text-sm font-bold text-red-400 bg-red-950/40 px-2 py-0.5 rounded border border-red-900/50">${p.oem}</span>
-            <span class="text-xs text-slate-300 font-semibold">${p.desc}</span>
+            <span class="font-mono-code text-xs sm:text-sm font-bold text-red-600 bg-red-50 px-2 py-0.5 rounded border border-red-200">${p.oem}</span>
+            <span class="text-xs sm:text-sm text-slate-900 font-bold">${p.desc}</span>
           </div>
-          <div class="text-xs text-slate-400 mt-1 flex items-center gap-2">
-            <span class="text-slate-500">Platform:</span>
-            <span class="text-slate-300">${p.model}</span>
+          <div class="text-xs text-slate-500 mt-1 flex items-center gap-2">
+            <span class="text-slate-400">Platform:</span>
+            <span class="text-slate-700 font-medium">${p.model}</span>
           </div>
         </div>
       </div>
-      <div class="flex items-center justify-between sm:justify-end gap-3 pt-2 sm:pt-0 border-t sm:border-t-0 border-slate-800">
-        <div class="flex items-center gap-1.5 bg-slate-950 px-2.5 py-1 rounded border border-slate-800">
-          <span class="text-xs text-slate-400">Qty:</span>
-          <span class="text-xs font-bold text-white font-mono-code">${p.qty}</span>
-          <span class="text-xs text-slate-500">${p.unit}</span>
+      <div class="flex items-center justify-between sm:justify-end gap-3 pt-2 sm:pt-0 border-t sm:border-t-0 border-slate-100">
+        <div class="flex items-center gap-1.5 bg-slate-50 px-2.5 py-1 rounded-lg border border-slate-200">
+          <span class="text-xs text-slate-500">Qty:</span>
+          <span class="text-xs font-bold text-slate-900 font-mono-code">${p.qty}</span>
+          <span class="text-[11px] text-slate-500">${p.unit}</span>
         </div>
-        <button onclick="removeRfqPart(${p.id})" class="text-slate-500 hover:text-red-400 p-1 rounded hover:bg-slate-800 transition-colors" title="Remove part">
+        <button onclick="removeRfqPart(${p.id})" class="text-slate-400 hover:text-red-600 p-1 rounded hover:bg-red-50 transition-colors" title="Remove part">
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
         </button>
       </div>
@@ -462,7 +462,6 @@ function initBulkDropzone() {
     if (!files.length) return;
     
     files.forEach(file => {
-      // Validate file type
       const validExtensions = ['.xlsx', '.xls', '.csv', '.pdf', '.png', '.jpg', '.jpeg', '.txt'];
       const fileExt = '.' + file.name.split('.').pop().toLowerCase();
       
@@ -497,17 +496,17 @@ function initBulkDropzone() {
     }
 
     previewContainer.innerHTML = rfqState.bulkFiles.map(f => `
-      <div class="flex items-center justify-between p-3 bg-slate-900 border border-slate-800 rounded-lg">
+      <div class="flex items-center justify-between p-3 bg-white border border-slate-200 shadow-sm rounded-xl">
         <div class="flex items-center gap-3">
-          <div class="w-8 h-8 rounded bg-red-950/60 border border-red-800/60 flex items-center justify-center text-xs font-mono-code font-bold text-red-400">
+          <div class="w-8 h-8 rounded-lg bg-red-50 border border-red-200 flex items-center justify-center text-xs font-mono-code font-bold text-red-600">
             ${f.type}
           </div>
           <div>
-            <div class="text-xs font-bold text-white max-w-xs truncate">${f.name}</div>
-            <div class="text-xs text-slate-400">${f.size} • Ready for factory engineering quote</div>
+            <div class="text-xs font-bold text-slate-900 max-w-xs truncate">${f.name}</div>
+            <div class="text-[11px] text-slate-500">${f.size} • Ready for factory engineering quote</div>
           </div>
         </div>
-        <button onclick="removeBulkFile(${f.id})" class="text-slate-500 hover:text-red-400 p-1">
+        <button onclick="removeBulkFile(${f.id})" class="text-slate-400 hover:text-red-600 p-1">
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
         </button>
       </div>
@@ -562,8 +561,6 @@ function submitRfqWhatsApp(source) {
   text += `═══════════════════════════════\n`;
   text += `_Sent via YSIT Korea OEM RFQ Engine • ysitkorea.com_`;
 
-  // Oman Hotline & Korea Global Dispatch WhatsApp Number
-  // Direct formatted WhatsApp link
   const encodedText = encodeURIComponent(text);
   const whatsappUrl = `https://wa.me/96894000000?text=${encodedText}`;
   
@@ -585,7 +582,6 @@ function submitRfqEmail(source) {
     return;
   }
 
-  // Open Quote Preview / Confirmation Modal
   openQuoteModal(source);
 }
 
@@ -616,7 +612,7 @@ function generateRfqTemplateDownload() {
 }
 
 /* ==========================================================================
-   4. VEHICLE PLATFORM COVERAGE & INTERACTIVE FILTER
+   4. VEHICLE PLATFORM COVERAGE & INTERACTIVE FILTER (Light Theme)
    ========================================================================== */
 function initVehiclePlatforms() {
   const filterBtns = document.querySelectorAll('.platform-filter-btn');
@@ -628,11 +624,11 @@ function initVehiclePlatforms() {
     btn.addEventListener('click', () => {
       const filter = btn.getAttribute('data-platform-filter');
       filterBtns.forEach(b => {
-        b.classList.remove('bg-red-600', 'text-white', 'shadow-md');
-        b.classList.add('bg-slate-900', 'text-slate-300');
+        b.classList.remove('bg-red-600', 'text-white', 'shadow-sm');
+        b.classList.add('bg-white', 'text-slate-700', 'border-slate-200');
       });
-      btn.classList.add('bg-red-600', 'text-white', 'shadow-md');
-      btn.classList.remove('bg-slate-900', 'text-slate-300');
+      btn.classList.add('bg-red-600', 'text-white', 'shadow-sm');
+      btn.classList.remove('bg-white', 'text-slate-700', 'border-slate-200');
 
       renderPlatformFleet(filter);
     });
@@ -655,34 +651,34 @@ function initVehiclePlatforms() {
 
       if (isExpansion) {
         return `
-          <div class="col-span-1 lg:col-span-3 bg-gradient-to-r from-red-950/30 via-slate-900/90 to-slate-950 border-2 border-dashed border-red-600/50 rounded-2xl p-6 sm:p-8 relative overflow-hidden">
+          <div class="col-span-1 lg:col-span-2 bg-gradient-to-r from-red-50 via-white to-slate-50 border-2 border-dashed border-red-300 rounded-3xl p-6 sm:p-8 relative overflow-hidden shadow-sm">
             <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6 mb-6">
               <div>
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-red-600 text-white mb-3">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-red-600 text-white mb-3 shadow-sm">
                   <span class="w-2 h-2 rounded-full bg-white animate-pulse"></span>
                   STRATEGIC EXPANSION LINE
                 </div>
-                <h3 class="text-2xl font-black text-white tracking-tight">Chinese Automotive Platforms Replacement Program</h3>
-                <p class="text-slate-300 text-sm max-w-2xl mt-1">Expanding Tier-1 standard replacement engineering to the GCC's fastest growing vehicle segments with complete chassis, braking, and thermal systems.</p>
+                <h3 class="text-2xl font-black text-slate-900 tracking-tight">Chinese Automotive Platforms Replacement Program</h3>
+                <p class="text-slate-600 text-xs sm:text-sm max-w-2xl mt-1 font-normal">Expanding Tier-1 standard replacement engineering to the GCC's fastest growing vehicle segments with complete chassis, braking, and thermal systems.</p>
               </div>
-              <button onclick="prefillExpansionRfq()" class="px-5 py-3 text-xs font-bold uppercase tracking-wider text-white bg-red-600 hover:bg-red-700 rounded-xl shadow-lg transition-all flex items-center justify-center gap-2">
+              <button onclick="prefillExpansionRfq()" class="px-5 py-3 text-xs font-bold uppercase tracking-wider text-white bg-red-600 hover:bg-red-700 rounded-xl shadow-md transition-all flex items-center justify-center gap-2">
                 <span>Inquire Chinese OEM Line</span>
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
               </button>
             </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3.5">
               ${p.models.map(m => `
-                <div class="bg-slate-900/90 border border-slate-800 rounded-xl p-4 hover:border-red-500/50 transition-all">
+                <div class="bg-white border border-slate-200 rounded-2xl p-4 hover:border-red-400 hover:shadow-md transition-all">
                   <div class="flex items-center justify-between mb-2">
-                    <span class="text-lg font-black text-white">${m.name}</span>
-                    <span class="text-[10px] uppercase font-bold text-red-400 bg-red-950/60 px-2 py-0.5 rounded border border-red-900/40">OEM Focus</span>
+                    <span class="text-base font-black text-slate-900">${m.name}</span>
+                    <span class="text-[10px] uppercase font-bold text-red-600 bg-red-50 px-2 py-0.5 rounded border border-red-200">OEM Focus</span>
                   </div>
-                  <div class="text-xs text-slate-300 font-medium">${m.series}</div>
-                  <div class="text-xs text-slate-400 mt-2">Coverage: <span class="text-slate-200">${m.focus}</span></div>
-                  <div class="mt-3 pt-2 border-t border-slate-800/80 flex items-center justify-between text-[11px]">
-                    <span class="text-emerald-400 font-semibold flex items-center gap-1">
-                      <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                  <div class="text-xs text-slate-700 font-semibold">${m.series}</div>
+                  <div class="text-[11px] text-slate-500 mt-2">Coverage: <span class="text-slate-800 font-medium">${m.focus}</span></div>
+                  <div class="mt-3 pt-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
+                    <span class="text-emerald-600 font-bold flex items-center gap-1">
+                      <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
                       ${m.status}
                     </span>
                   </div>
@@ -694,33 +690,33 @@ function initVehiclePlatforms() {
       }
 
       return `
-        <div class="bg-slate-900/80 border border-slate-800 hover:border-slate-700 rounded-2xl p-6 sm:p-7 flex flex-col justify-between transition-all group">
+        <div class="bg-white border border-slate-200 hover:border-slate-300 shadow-sm hover:shadow-lg rounded-3xl p-6 sm:p-7 flex flex-col justify-between transition-all group">
           <div>
-            <div class="flex items-center justify-between border-b border-slate-800 pb-4 mb-5">
+            <div class="flex items-center justify-between border-b border-slate-100 pb-4 mb-5">
               <div class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded-xl bg-slate-800 border border-slate-700 flex items-center justify-center font-black text-white text-lg">
+                <div class="w-10 h-10 rounded-xl bg-slate-100 border border-slate-200 flex items-center justify-center font-black text-slate-900 text-lg">
                   ${p.brand.slice(0, 1)}
                 </div>
                 <div>
-                  <h3 class="text-xl font-black text-white tracking-tight">${p.brand} Platform Series</h3>
-                  <p class="text-xs text-slate-400">1:1 Korean OEM Dimensional Compliance</p>
+                  <h3 class="text-xl font-black text-slate-900 tracking-tight">${p.brand} Platform Series</h3>
+                  <p class="text-xs text-slate-500 font-medium">1:1 Korean OEM Dimensional Compliance</p>
                 </div>
               </div>
-              <span class="px-2.5 py-1 rounded-full text-xs font-bold bg-slate-800 text-red-400 border border-slate-700">${p.models.length} Key Fleets</span>
+              <span class="px-2.5 py-1 rounded-full text-xs font-bold bg-slate-100 text-red-600 border border-slate-200">${p.models.length} Key Fleets</span>
             </div>
 
-            <div class="space-y-3 mb-6">
+            <div class="space-y-2.5 mb-6">
               ${p.models.map(m => `
-                <div class="p-3 rounded-lg bg-slate-950/70 border border-slate-800/80 hover:border-red-600/40 hover:bg-slate-950 transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                <div class="p-3 rounded-xl bg-slate-50 border border-slate-200/80 hover:border-red-300 hover:bg-white transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-2">
                   <div>
                     <div class="flex items-center gap-2">
-                      <span class="text-sm font-bold text-white">${m.name}</span>
-                      <span class="text-xs font-mono-code text-slate-400 bg-slate-900 px-1.5 py-0.5 rounded border border-slate-800">${m.chassis}</span>
-                      <span class="text-xs text-slate-500">${m.years}</span>
+                      <span class="text-sm font-bold text-slate-900">${m.name}</span>
+                      <span class="text-xs font-mono-code text-slate-600 bg-white px-1.5 py-0.5 rounded border border-slate-200 font-semibold">${m.chassis}</span>
+                      <span class="text-xs text-slate-400 font-medium">${m.years}</span>
                     </div>
-                    <div class="text-xs text-slate-400 mt-0.5">Engines: ${m.engines}</div>
+                    <div class="text-xs text-slate-500 mt-0.5 font-medium">Engines: ${m.engines}</div>
                   </div>
-                  <button onclick="prefillModelRfq('${p.brand} ${m.name}')" class="text-xs font-semibold text-red-400 hover:text-white bg-slate-900 hover:bg-red-600 px-2.5 py-1.5 rounded transition-colors self-start sm:self-auto flex items-center gap-1">
+                  <button onclick="prefillModelRfq('${p.brand} ${m.name}')" class="text-xs font-bold text-red-600 hover:text-white bg-white hover:bg-red-600 border border-red-200 hover:border-red-600 px-3 py-1.5 rounded-lg transition-colors self-start sm:self-auto flex items-center gap-1 shadow-sm">
                     <span>Inquire Part</span>
                     <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
                   </button>
@@ -729,9 +725,9 @@ function initVehiclePlatforms() {
             </div>
           </div>
 
-          <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-400">
+          <div class="pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
             <span>High-volume container batches available</span>
-            <button onclick="prefillModelRfq('${p.brand} All Models')" class="text-white font-bold hover:text-red-400 flex items-center gap-1">
+            <button onclick="prefillModelRfq('${p.brand} All Models')" class="text-slate-900 font-bold hover:text-red-600 flex items-center gap-1">
               <span>Full ${p.brand} RFQ</span>
               <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
             </button>
@@ -768,7 +764,7 @@ window.prefillExpansionRfq = function() {
 };
 
 /* ==========================================================================
-   5. CORE PRODUCT SYSTEMS VISUAL GRID & SPEC MODAL
+   5. CORE PRODUCT SYSTEMS VISUAL GRID & SPEC MODAL (Light Theme)
    ========================================================================== */
 function initProductSystems() {
   const systemCards = document.querySelectorAll('.system-quick-inquire-btn');
@@ -801,17 +797,17 @@ function initProductSystems() {
       specModalTitle.textContent = sysData.title;
       specModalContent.innerHTML = `
         <div class="space-y-5">
-          <div class="p-4 bg-slate-900 border border-slate-800 rounded-xl">
-            <h5 class="text-xs uppercase font-bold text-red-400 tracking-wider mb-2">Technical Description</h5>
-            <p class="text-sm text-slate-300">${sysData.shortDesc}</p>
+          <div class="p-4 bg-slate-50 border border-slate-200 rounded-2xl">
+            <h5 class="text-xs uppercase font-bold text-red-600 tracking-wider mb-1.5">Technical Description</h5>
+            <p class="text-xs sm:text-sm text-slate-700 leading-relaxed">${sysData.shortDesc}</p>
           </div>
 
           <div>
-            <h5 class="text-xs uppercase font-bold text-slate-400 tracking-wider mb-3">Key Assemblies & Components</h5>
+            <h5 class="text-xs uppercase font-bold text-slate-500 tracking-wider mb-3">Key Assemblies & Components</h5>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
               ${sysData.components.map(c => `
-                <div class="p-2.5 rounded bg-slate-900/60 border border-slate-800 text-xs text-white font-medium flex items-center gap-2">
-                  <span class="w-1.5 h-1.5 rounded-full bg-red-500"></span>
+                <div class="p-2.5 rounded-xl bg-white border border-slate-200 text-xs text-slate-800 font-semibold flex items-center gap-2 shadow-sm">
+                  <span class="w-2 h-2 rounded-full bg-red-500"></span>
                   ${c}
                 </div>
               `).join('')}
@@ -819,25 +815,25 @@ function initProductSystems() {
           </div>
 
           <div>
-            <h5 class="text-xs uppercase font-bold text-slate-400 tracking-wider mb-3">Metallurgical & Engineering Standards</h5>
+            <h5 class="text-xs uppercase font-bold text-slate-500 tracking-wider mb-3">Metallurgical & Engineering Standards</h5>
             <ul class="space-y-2">
               ${sysData.techSpecs.map(s => `
-                <li class="text-xs text-slate-300 flex items-start gap-2">
-                  <svg class="w-4 h-4 text-emerald-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                <li class="text-xs text-slate-700 flex items-start gap-2 font-medium">
+                  <svg class="w-4 h-4 text-emerald-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
                   <span>${s}</span>
                 </li>
               `).join('')}
             </ul>
           </div>
 
-          <div class="p-4 bg-red-950/30 border border-red-800/40 rounded-xl">
-            <h5 class="text-xs uppercase font-bold text-red-400 tracking-wider mb-1">20+ Year GCC Climate Advantage</h5>
-            <p class="text-xs text-slate-300">${sysData.climateAdvantage}</p>
+          <div class="p-4 bg-red-50 border border-red-200 rounded-2xl">
+            <h5 class="text-xs uppercase font-bold text-red-700 tracking-wider mb-1">20+ Year GCC Climate Advantage</h5>
+            <p class="text-xs text-slate-700 leading-relaxed">${sysData.climateAdvantage}</p>
           </div>
 
-          <div class="pt-4 border-t border-slate-800 flex items-center justify-between">
-            <span class="text-xs font-mono-code text-slate-400">Sample OE Ref: ${sysData.featuredPart}</span>
-            <button onclick="prefillSystemFromModal('${sysData.title}')" class="px-4 py-2 text-xs font-bold text-white bg-red-600 hover:bg-red-700 rounded-lg transition-all">
+          <div class="pt-4 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-3">
+            <span class="text-xs font-mono-code text-slate-500 font-semibold">Sample OE Ref: ${sysData.featuredPart}</span>
+            <button onclick="prefillSystemFromModal('${sysData.title}')" class="w-full sm:w-auto px-5 py-2.5 text-xs font-bold text-white bg-red-600 hover:bg-red-700 rounded-xl transition-all shadow-md">
               Inquire This System Now
             </button>
           </div>
@@ -871,7 +867,7 @@ window.prefillSystemFromModal = function(systemTitle) {
 };
 
 /* ==========================================================================
-   6. QUALITY & METALLURGICAL TESTING LAB
+   6. QUALITY & METALLURGICAL TESTING LAB (Light Theme)
    ========================================================================== */
 function initQualityLab() {
   const labTabs = document.querySelectorAll('.quality-tab-btn');
@@ -929,33 +925,33 @@ function initQualityLab() {
       if (!data) return;
 
       labTabs.forEach(t => {
-        t.classList.remove('bg-red-600', 'text-white', 'shadow-md');
-        t.classList.add('bg-slate-900', 'text-slate-400');
+        t.classList.remove('bg-red-600', 'text-white', 'shadow-sm');
+        t.classList.add('bg-white', 'text-slate-700', 'border-slate-200');
       });
-      tab.classList.add('bg-red-600', 'text-white', 'shadow-md');
-      tab.classList.remove('bg-slate-900', 'text-slate-400');
+      tab.classList.add('bg-red-600', 'text-white', 'shadow-sm');
+      tab.classList.remove('bg-white', 'text-slate-700', 'border-slate-200');
 
       labDisplay.innerHTML = `
-        <div class="p-6 bg-slate-900/90 border border-slate-800 rounded-2xl">
-          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-800 pb-4 mb-5">
+        <div class="p-6 sm:p-8 bg-white border border-slate-200 rounded-3xl shadow-sm">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-100 pb-4 mb-5">
             <div>
-              <span class="text-xs font-mono-code font-bold text-red-400 uppercase tracking-wider">YSIT Verification Protocol</span>
-              <h4 class="text-xl font-bold text-white mt-1">${data.title}</h4>
-              <p class="text-xs text-slate-400">${data.subtitle}</p>
+              <span class="text-xs font-mono font-bold text-red-600 uppercase tracking-wider">YSIT Verification Protocol</span>
+              <h4 class="text-xl font-black text-slate-900 mt-1">${data.title}</h4>
+              <p class="text-xs text-slate-500 font-medium">${data.subtitle}</p>
             </div>
-            <span class="px-3 py-1 rounded-full text-xs font-bold bg-emerald-950/60 border border-emerald-800/60 text-emerald-400 self-start sm:self-auto flex items-center gap-1.5">
-              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+            <span class="px-3 py-1 rounded-full text-xs font-bold bg-emerald-50 border border-emerald-200 text-emerald-700 self-start sm:self-auto flex items-center gap-1.5 shadow-sm">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
               Passed Tier-1 Lab Test
             </span>
           </div>
 
-          <p class="text-sm text-slate-300 leading-relaxed mb-6">${data.desc}</p>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-6 font-normal">${data.desc}</p>
 
-          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3.5">
             ${data.metrics.map(m => `
-              <div class="bg-slate-950 p-3.5 rounded-xl border border-slate-800/80">
-                <div class="text-xs text-slate-400 uppercase tracking-wider font-medium">${m.label}</div>
-                <div class="text-lg font-black text-white font-mono-code mt-1 text-red-400">${m.val}</div>
+              <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200/80 shadow-sm">
+                <div class="text-[11px] text-slate-500 uppercase tracking-wider font-semibold">${m.label}</div>
+                <div class="text-xl font-black font-mono mt-1 text-red-600">${m.val}</div>
               </div>
             `).join('')}
           </div>
@@ -975,8 +971,8 @@ function initLanguageSwitcher() {
       const lang = btn.getAttribute('data-lang');
       const langName = lang === 'ko' ? '한국어 (Korean)' : lang === 'ar' ? 'العربية (Arabic)' : 'English (Global)';
       
-      langBtns.forEach(b => b.classList.remove('text-red-400', 'font-bold'));
-      btn.classList.add('text-red-400', 'font-bold');
+      langBtns.forEach(b => b.classList.remove('text-red-600', 'font-bold'));
+      btn.classList.add('text-red-600', 'font-bold');
 
       if (lang === 'ar') {
         showToast(`Language set to ${langName}. OEM RFQ forms support Arabic procurement requests.`, 'info');
@@ -990,7 +986,7 @@ function initLanguageSwitcher() {
 }
 
 /* ==========================================================================
-   8. QUOTE PREVIEW & EXPORT MODAL
+   8. QUOTE PREVIEW & EXPORT MODAL (Light Theme)
    ========================================================================== */
 function initQuoteModal() {
   const modal = document.getElementById('quotePreviewModal');
@@ -1033,24 +1029,24 @@ function openQuoteModal(source) {
   let itemsHtml = '';
   if (source === 'fast') {
     itemsHtml = `
-      <table class="w-full text-left text-xs border border-slate-700 rounded overflow-hidden">
-        <thead class="bg-slate-900 text-slate-300 font-bold uppercase">
+      <table class="w-full text-left text-xs border border-slate-200 rounded-xl overflow-hidden shadow-sm">
+        <thead class="bg-slate-100 text-slate-700 font-bold uppercase">
           <tr>
-            <th class="p-2.5">Item</th>
-            <th class="p-2.5 font-mono-code">OEM Part No.</th>
-            <th class="p-2.5">Description</th>
-            <th class="p-2.5">Platform Fitment</th>
-            <th class="p-2.5 text-right font-mono-code">Target Qty</th>
+            <th class="p-3">Item</th>
+            <th class="p-3 font-mono-code">OEM Part No.</th>
+            <th class="p-3">Description</th>
+            <th class="p-3">Platform Fitment</th>
+            <th class="p-3 text-right font-mono-code">Target Qty</th>
           </tr>
         </thead>
-        <tbody class="divide-y divide-slate-800 text-slate-200">
+        <tbody class="divide-y divide-slate-100 text-slate-800 bg-white">
           ${rfqState.parts.map((p, i) => `
-            <tr class="hover:bg-slate-900/50">
-              <td class="p-2.5">${i + 1}</td>
-              <td class="p-2.5 font-mono-code font-bold text-red-400">${p.oem}</td>
-              <td class="p-2.5 font-medium">${p.desc}</td>
-              <td class="p-2.5 text-slate-400">${p.model}</td>
-              <td class="p-2.5 text-right font-mono-code font-bold">${p.qty} ${p.unit}</td>
+            <tr class="hover:bg-slate-50 transition-colors">
+              <td class="p-3 font-semibold">${i + 1}</td>
+              <td class="p-3 font-mono-code font-bold text-red-600">${p.oem}</td>
+              <td class="p-3 font-bold">${p.desc}</td>
+              <td class="p-3 text-slate-600">${p.model}</td>
+              <td class="p-3 text-right font-mono-code font-bold">${p.qty} ${p.unit}</td>
             </tr>
           `).join('')}
         </tbody>
@@ -1058,13 +1054,13 @@ function openQuoteModal(source) {
     `;
   } else {
     itemsHtml = `
-      <div class="p-4 bg-slate-900 border border-slate-800 rounded-lg">
-        <div class="text-xs uppercase font-bold text-slate-400 mb-2">Attached Specification Files (${rfqState.bulkFiles.length}):</div>
+      <div class="p-4 bg-slate-50 border border-slate-200 rounded-2xl">
+        <div class="text-xs uppercase font-bold text-slate-500 mb-2">Attached Specification Files (${rfqState.bulkFiles.length}):</div>
         <ul class="space-y-1.5">
           ${rfqState.bulkFiles.map(f => `
-            <li class="text-xs text-slate-200 flex items-center justify-between">
-              <span class="font-medium">${f.name}</span>
-              <span class="font-mono-code text-slate-400">${f.size}</span>
+            <li class="text-xs text-slate-800 font-medium flex items-center justify-between p-2 bg-white rounded-lg border border-slate-200">
+              <span class="font-bold">${f.name}</span>
+              <span class="font-mono-code text-slate-500">${f.size}</span>
             </li>
           `).join('')}
         </ul>
@@ -1074,29 +1070,29 @@ function openQuoteModal(source) {
 
   quoteBody.innerHTML = `
     <div class="space-y-4">
-      <div class="flex flex-col sm:flex-row justify-between gap-4 p-4 bg-slate-900 border border-slate-800 rounded-xl text-xs">
+      <div class="flex flex-col sm:flex-row justify-between gap-4 p-4 bg-slate-50 border border-slate-200 rounded-2xl text-xs">
         <div>
-          <span class="text-slate-400 uppercase font-semibold">Inquirer / Buyer:</span>
-          <div class="text-sm font-bold text-white mt-0.5">${rfqState.customerCompany || 'Wholesale Buyer'}</div>
-          <div class="text-slate-300">${rfqState.customerName || 'Procurement Desk'} • ${rfqState.customerEmail || 'sales@company.com'}</div>
-          <div class="text-slate-400">${rfqState.customerPhone || '+968 / +82 Contact'}</div>
+          <span class="text-slate-500 uppercase font-bold">Inquirer / Buyer:</span>
+          <div class="text-sm font-black text-slate-900 mt-0.5">${rfqState.customerCompany || 'Wholesale Buyer'}</div>
+          <div class="text-slate-600 mt-0.5">${rfqState.customerName || 'Procurement Desk'} • ${rfqState.customerEmail || 'sales@company.com'}</div>
+          <div class="text-slate-500 font-mono mt-0.5">${rfqState.customerPhone || '+968 / +82 Contact'}</div>
         </div>
         <div class="sm:text-right">
-          <span class="text-slate-400 uppercase font-semibold">Delivery Logistics:</span>
-          <div class="text-sm font-bold text-white mt-0.5">${dest}</div>
-          <div class="text-slate-300">Shipment Mode: ${freight}</div>
-          <div class="text-emerald-400 font-medium">Guaranteed Response within 24h</div>
+          <span class="text-slate-500 uppercase font-bold">Delivery Logistics:</span>
+          <div class="text-sm font-black text-slate-900 mt-0.5">${dest}</div>
+          <div class="text-slate-600 mt-0.5">Shipment Mode: ${freight}</div>
+          <div class="text-emerald-600 font-bold mt-0.5">Guaranteed Response within 24h</div>
         </div>
       </div>
 
       <div>
-        <div class="text-xs font-bold uppercase text-slate-400 tracking-wider mb-2">Quotation Specifications</div>
+        <div class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-2">Quotation Specifications</div>
         ${itemsHtml}
       </div>
 
-      <div class="p-3 bg-red-950/30 border border-red-800/40 rounded-lg text-xs text-slate-300 flex items-center justify-between">
-        <span>Korean OEM CAD & Metallurgical Compliance Guaranteed.</span>
-        <span class="font-bold text-white">Date: ${dateStr}</span>
+      <div class="p-3 bg-red-50 border border-red-200 rounded-xl text-xs text-slate-700 flex items-center justify-between">
+        <span class="font-medium">Korean OEM CAD & Metallurgical Compliance Guaranteed.</span>
+        <span class="font-bold text-slate-900">Date: ${dateStr}</span>
       </div>
     </div>
   `;
@@ -1107,9 +1103,8 @@ function openQuoteModal(source) {
 }
 
 /* ==========================================================================
-   9. TOAST NOTIFICATION SYSTEM
+   9. TOAST NOTIFICATION SYSTEM (Light Theme)
    ========================================================================== */
-let toastTimeout;
 function initToastSystem() {
   if (!document.getElementById('toastContainer')) {
     const container = document.createElement('div');
@@ -1124,13 +1119,13 @@ function showToast(message, type = 'info') {
   if (!container) return;
 
   const toast = document.createElement('div');
-  const bgColor = type === 'error' ? 'bg-red-950 border-red-700 text-red-200' :
-                  type === 'success' ? 'bg-emerald-950 border-emerald-700 text-emerald-200' :
-                  'bg-slate-900 border-slate-700 text-slate-200';
+  const bgColor = type === 'error' ? 'bg-red-50 border-red-300 text-red-800' :
+                  type === 'success' ? 'bg-emerald-50 border-emerald-300 text-emerald-800' :
+                  'bg-white border-slate-200 text-slate-800';
 
   const icon = type === 'error' ? '⚠️' : type === 'success' ? '✓' : 'ℹ️';
 
-  toast.className = `${bgColor} border px-4 py-3 rounded-xl shadow-2xl text-xs font-medium flex items-center gap-2.5 transform transition-all duration-300 translate-y-4 opacity-0 pointer-events-auto max-w-md`;
+  toast.className = `${bgColor} border px-4 py-3 rounded-2xl shadow-xl text-xs font-semibold flex items-center gap-2.5 transform transition-all duration-300 translate-y-4 opacity-0 pointer-events-auto max-w-md`;
   toast.innerHTML = `
     <span class="text-sm">${icon}</span>
     <span>${message}</span>
@@ -1138,13 +1133,11 @@ function showToast(message, type = 'info') {
 
   container.appendChild(toast);
 
-  // Animate in
   requestAnimationFrame(() => {
     toast.classList.remove('translate-y-4', 'opacity-0');
     toast.classList.add('translate-y-0', 'opacity-100');
   });
 
-  // Auto remove after 4 seconds
   setTimeout(() => {
     toast.classList.add('translate-y-4', 'opacity-0');
     setTimeout(() => {
@@ -1153,9 +1146,8 @@ function showToast(message, type = 'info') {
   }, 4000);
 }
 
-/* Helper to scroll smoothly to RFQ desk */
 function scrollToRfqDesk() {
-  const rfqElem = document.getElementById('rfqDeskSection');
+  const rfqElem = document.getElementById('rfqDeskSection') || document.getElementById('rfq-desk');
   if (rfqElem) {
     const headerOffset = 70;
     const elementPosition = rfqElem.getBoundingClientRect().top;
@@ -1167,7 +1159,6 @@ function scrollToRfqDesk() {
   }
 }
 
-/* Initialize Lucide icons if available */
 function initLucideIcons() {
   if (window.lucide && typeof window.lucide.createIcons === 'function') {
     window.lucide.createIcons();
