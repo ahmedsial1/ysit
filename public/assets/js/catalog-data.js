@@ -4,42 +4,109 @@
  */
 
 const YSIT_CATALOG_DATA = {
+  groupInfo: {
+    legacy: "18+ Years Multi-Jurisdictional Governance",
+    leadership: [
+      {
+        name: "Muhammad Amjad",
+        title: "Group CEO & Founder",
+        role: "GCC & East Asia Trade Delegate",
+        quote: "Resilience is building proprietary pipelines that ensure our partners never fail.",
+        desc: "Over nearly two decades, built factory-direct pipelines connecting South Korea, China, the GCC, and Africa—eliminating middleman broker markups."
+      },
+      {
+        name: "CH Munawar Hussain Sial",
+        title: "Group Chairman",
+        role: "Global Governance & Joint Ventures",
+        quote: "Integrity and trust form the foundation of global commerce. We build enduring bridges.",
+        desc: "Oversees multi-jurisdictional compliance, international trade ministry relations, and long-term joint venture frameworks."
+      }
+    ],
+    sisterPlatforms: [
+      { name: "SK Transports Oman", url: "https://www.sktransportsoman.com", desc: "PDO Approved Heavy Lifting & 25T-500T Mobile Cranes" },
+      { name: "Sial Kingdom LLC", url: "https://www.sialkingdom.com", desc: "Seeb, Suwaiq & Sohar Industrial B2B Network" },
+      { name: "Yahya Auto Parts", url: "https://www.yahyaautoparts.com", desc: "15+ Nationwide Automotive Spare Parts Branches" }
+    ]
+  },
+
   hubs: [
     {
       id: "kr",
       country: "South Korea",
-      city: "Hwaseong-Si, Gyeonggi-Do / Seoul",
-      role: "Global Headquarters & OEM Engineering Compliance",
+      city: "Seoul & Hwaseong-Si",
+      entity: "Sial & Young A Trading Co. / YSIT Korea Co., Ltd.",
+      role: "Global OEM Engineering Compliance & Export HQ",
       badge: "HQ & Engineering",
       color: "#DC2626",
-      details: "Registered South Korean corporate standing overseeing strict OEM dimensional verification, metallurgical formulas, and 1:1 Korean platform CAD compliance.",
-      stats: { "Corporate Standing": "Registered Ltd.", "Fitment Tolerance": "±0.02 mm", "Standard": "KS / ISO 9001" },
-      address: "199, CheonGwon-Ro, Mado-Myeon, Hwaseong-Si, Gyeonggi-Do, Republic of Korea",
+      details: "Registered South Korean corporate standing overseeing strict OEM dimensional verification, metallurgical formulas, and 1:1 Korean platform CAD compliance (±0.02 mm tolerance).",
+      stats: { "Corporate Standing": "Sial & Young A Trading Co.", "Fitment Tolerance": "±0.02 mm", "ERP System": "Odoo ERP Integrated" },
+      address: "199, CheonGwon-Ro, Mado-Myeon, Hwaseong-Si, Gyeonggi-Do / Seoul Procurement Center, Korea",
       contact: "kr-desk@ysitkorea.com / +82-10-55489938"
     },
     {
       id: "cn",
       country: "China",
-      city: "Ningbo & Guangzhou",
-      role: "Precision Sourcing, Manufacturing & Export Hub",
+      city: "Yiwu, Ningbo & Guangzhou",
+      entity: "Yiwu SIAL International Trading Co. Ltd.",
+      role: "Precision Sourcing, 4-Stage QC & Container Export Node",
       badge: "Sourcing & QC Hub",
       color: "#2563EB",
-      details: "Direct factory-floor multi-stage quality assurance, metallurgical spectroscopy, automated rust-inhibiting packaging, and high-volume container dispatch.",
-      stats: { "Monthly Capacity": "120,000+ Units", "Inspection Stages": "4-Step QC", "QC Standard": "IATF 16949" },
-      address: "Beilun Industrial Logistics Zone, Ningbo / Huadu Auto Park, Guangzhou",
-      contact: "export@ysitkorea.com"
+      details: "Direct factory-floor multi-stage quality assurance, metallurgical spectroscopy, automated rust-inhibiting packaging, and high-volume containerized shipping to GCC and African ports.",
+      stats: { "Entity": "Yiwu SIAL Intl Trading Co.", "Inspection Stages": "4-Stage Factory QC", "QC Standard": "IATF 16949 / ISO 9001" },
+      address: "Yiwu Main Wholesale Node / Beilun Logistics Zone, Ningbo & Guangzhou Auto Park, China",
+      contact: "export@ysitkorea.com / WeChat: SIALautoparts"
     },
     {
       id: "om",
       country: "Oman & GCC",
-      city: "Muscat (Mabeela & Ghala Industrial)",
-      role: "20+ Years Commercial Distribution & Extreme Climate Testing (Sial International L.L.C)",
+      city: "Muscat, Seeb, Suwaiq & Sohar",
+      entity: "Sial International LLC (CR: 1387932) & Sial Kingdom LLC",
+      role: "20+ Years Commercial Distribution & 50°C+ Field Durability",
       badge: "20+ Years GCC Legacy",
       color: "#059669",
-      details: "Over two decades of commercial wholesale distribution in Oman and across GCC markets (CR No: 1387932). Every component is field-engineered to endure 50°C+ summer heat and sand abrasion.",
-      stats: { "Market Presence": "20+ Years", "CR Number": "CR No: 1387932", "Network": "GCC Wide" },
-      address: "Seeb Mabeela Industrial Area, P.O. Box 633, Postal Code: 620, Muscat, Sultanate of Oman",
-      contact: "gcc-sales@ysitkorea.com / +968-9192-9355"
+      details: "Over two decades of commercial wholesale distribution in Oman and across GCC markets (CR No: 1387932). Operating 15+ branches nationwide with full PDO & OPAL compliance.",
+      stats: { "Footprint": "15+ Branches Nationwide", "CR Number": "CR No: 1387932", "Climate Rating": "50°C+ Desert Heat Proven" },
+      address: "Road 6, Way No 7749, Mabeela Sanaiya, Seeb Wilayat, Muscat, Sultanate of Oman",
+      contact: "sialautotraders@gmail.com / +968-9192-9355"
+    },
+    {
+      id: "sa",
+      country: "Saudi Arabia",
+      city: "Jeddah Industrial Hub",
+      entity: "Sial International LLC (Saudi Arabia)",
+      role: "Regional Heavy Fleet Support & Spare Parts Logistics",
+      badge: "Saudi Regional Desk",
+      color: "#D97706",
+      details: "Direct enterprise supply and commercial fleet logistics hub operating under SASO compliance, serving major commercial transport corridors across the Kingdom.",
+      stats: { "Compliance": "SASO Verified", "Operations": "Jeddah Yards & Head Office", "Logistics": "Direct GCC Corridor" },
+      address: "Jeddah Industrial Area & Commercial Yards, Kingdom of Saudi Arabia",
+      contact: "sialautotraders@gmail.com / +968-9192-9355"
+    },
+    {
+      id: "mz",
+      country: "Mozambique (Africa)",
+      city: "Nampula & Maputo",
+      entity: "SIAL KINGDOM TRADING CO, LDA",
+      role: "East African Logistics Node & Nacala Port Clearing",
+      badge: "East Africa Pipeline",
+      color: "#7C3AED",
+      details: "Dedicated African infrastructure and industrial supply corridor, connecting direct East Asian manufacturing pipelines with Nacala and Maputo deep-water ports.",
+      stats: { "Port Pipeline": "Nacala Port Clearing", "Facility": "Nampula Central Warehouse", "Contact Hotline": "+258 86 990 0800" },
+      address: "Main AV. Nacala Road, Nampula 3100, Mozambique",
+      contact: "sialautotraders@gmail.com / +258-86-990-0800"
+    },
+    {
+      id: "pk",
+      country: "Pakistan (South Asia)",
+      city: "Sialkot Corporate HQ",
+      entity: "Sial International (Pvt) Limited / Sial Trader's / Sial & Co",
+      role: "Corporate Head Office & Central ERP Supply Chain",
+      badge: "South Asia Hub",
+      color: "#0D9488",
+      details: "Central administrative governance and Odoo ERP enterprise synchronized database managing international trade contracts, customs clearance, and global banking facilities.",
+      stats: { "Corporate Standing": "Registered Pvt Ltd", "ERP System": "Odoo ERP Synchronized", "Desk": "Corporate Affairs Desk" },
+      address: "Corporate Head Office, Sialkot, Punjab, Pakistan",
+      contact: "sialautotraders@gmail.com"
     }
   ],
 
