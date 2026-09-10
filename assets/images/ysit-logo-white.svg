@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 200" fill="none">
+  <!-- YSIT Official Wordmark - White & Red Accent for Dark Backgrounds -->
+  <g fill="#FFFFFF">
+    <!-- Y -->
+    <path d="M40 30 L82 92 L82 135 L108 135 L108 92 L150 30 L120 30 L95 72 L70 30 Z" />
+    
+    <!-- S -->
+    <path d="M165 105 C 165 125, 180 137, 210 137 C 240 137, 255 124, 255 106 C 255 88, 240 82, 215 78 C 190 73, 172 68, 172 52 C 172 38, 186 28, 208 28 C 230 28, 245 38, 248 54 L222 54 C 220 45, 216 41, 208 41 C 199 41, 194 45, 194 51 C 194 58, 200 62, 222 66 C 248 71, 278 77, 278 105 C 278 126, 260 148, 210 148 C 162 148, 142 127, 142 105 Z" />
+    
+    <!-- I -->
+    <path d="M290 30 L316 30 L316 135 L290 135 Z" />
+    
+    <!-- T -->
+    <path d="M330 30 L415 30 L415 48 L386 48 L386 135 L359 135 L359 48 L330 48 Z" />
+  </g>
+
+  <!-- Genuine Parts Subtitle in Crisp White / Racing Red -->
+  <text x="40" y="182" font-family="'Plus Jakarta Sans', 'Inter', -apple-system, sans-serif" font-size="34" font-weight="700" fill="#E2E8F0" letter-spacing="1">Genuine <tspan fill="#DC2626">Parts</tspan></text>
+</svg>

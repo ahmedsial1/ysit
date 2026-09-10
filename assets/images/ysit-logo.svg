@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 220" fill="none">
+  <!-- YSIT Official Wordmark - Transparent Background -->
+  <g fill="#15509E">
+    <!-- Stylized Y -->
+    <path d="M40 32 L88 100 L88 145 L116 145 L116 100 L164 32 L132 32 L102 78 L72 32 Z" />
+    
+    <!-- Bold S -->
+    <path d="M180 112 C 180 134, 196 147, 228 147 C 260 147, 276 133, 276 113 C 276 94, 260 87, 233 83 C 206 78, 187 72, 187 55 C 187 40, 202 30, 226 30 C 250 30, 266 41, 269 58 L241 58 C 239 48, 235 44, 226 44 C 216 44, 211 48, 211 55 C 211 62, 217 67, 240 71 C 268 76, 301 82, 301 112 C 301 135, 281 159, 228 159 C 176 159, 155 136, 155 112 Z" />
+    
+    <!-- Bold I -->
+    <path d="M315 32 L343 32 L343 145 L315 145 Z" />
+    
+    <!-- Bold T -->
+    <path d="M360 32 L452 32 L452 52 L420 52 L420 145 L392 145 L392 52 L360 52 Z" />
+  </g>
+
+  <!-- Genuine Parts Text Matching Official Font Geometry -->
+  <text x="42" y="196" font-family="'Plus Jakarta Sans', 'Inter', -apple-system, sans-serif" font-size="38" font-weight="700" fill="#15509E" letter-spacing="0.5">Genuine Parts</text>
+</svg>
