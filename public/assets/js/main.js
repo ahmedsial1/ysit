@@ -562,7 +562,7 @@ function submitRfqWhatsApp(source) {
   text += `_Sent via YSIT Korea OEM RFQ Engine • ysitkorea.com_`;
 
   const encodedText = encodeURIComponent(text);
-  const whatsappUrl = `https://wa.me/96894000000?text=${encodedText}`;
+  const whatsappUrl = `https://wa.me/96891929355?text=${encodedText}`;
   
   window.open(whatsappUrl, '_blank');
   showToast('Opening WhatsApp Business Desk with pre-formatted OEM inquiry!', 'success');

@@ -1,6 +1,6 @@
 /**
  * YSIT Genuine Parts - Master Catalog & OE Cross-Reference Database
- * High-precision reference dataset for Hyundai, Kia, and Expansion Platforms
+ * Grounded in Korean Engineering, backed by 20+ Years Oman & GCC Wholesale Distribution (Sial Auto Group)
  */
 
 const YSIT_CATALOG_DATA = {
@@ -8,14 +8,14 @@ const YSIT_CATALOG_DATA = {
     {
       id: "kr",
       country: "South Korea",
-      city: "Seoul / Incheon",
+      city: "Hwaseong-Si, Gyeonggi-Do / Seoul",
       role: "Global Headquarters & OEM Engineering Compliance",
       badge: "HQ & Engineering",
       color: "#DC2626",
-      details: "Registered South Korean corporate entity overseeing strict OEM dimensional verification, metallurgical formulas, and 1:1 Korean platform CAD compliance.",
+      details: "Registered South Korean corporate standing overseeing strict OEM dimensional verification, metallurgical formulas, and 1:1 Korean platform CAD compliance.",
       stats: { "Corporate Standing": "Registered Ltd.", "Fitment Tolerance": "±0.02 mm", "Standard": "KS / ISO 9001" },
-      address: "Teheran-ro, Gangnam-gu, Seoul, Republic of Korea",
-      contact: "kr-desk@ysitkorea.com"
+      address: "199, CheonGwon-Ro, Mado-Myeon, Hwaseong-Si, Gyeonggi-Do, Republic of Korea",
+      contact: "kr-desk@ysitkorea.com / +82-10-55489938"
     },
     {
       id: "cn",
@@ -32,14 +32,14 @@ const YSIT_CATALOG_DATA = {
     {
       id: "om",
       country: "Oman & GCC",
-      city: "Muscat & Regional Hubs",
-      role: "20+ Years Commercial Distribution & Extreme Climate Testing",
+      city: "Muscat (Mabeela & Ghala Industrial)",
+      role: "20+ Years Commercial Distribution & Extreme Climate Testing (Sial International L.L.C)",
       badge: "20+ Years GCC Legacy",
       color: "#059669",
-      details: "Over two decades of commercial wholesale distribution in Oman and across GCC markets. Every component is field-engineered to endure 50°C+ summer heat and sand abrasion.",
-      stats: { "Market Presence": "20+ Years", "Thermal Rating": "50°C+ Resilient", "Network": "GCC Wide" },
-      address: "Ghala Industrial Area & Wadi Kabir Automotive Zone, Muscat, Sultanate of Oman",
-      contact: "gcc-sales@ysitkorea.com"
+      details: "Over two decades of commercial wholesale distribution in Oman and across GCC markets (CR No: 1387932). Every component is field-engineered to endure 50°C+ summer heat and sand abrasion.",
+      stats: { "Market Presence": "20+ Years", "CR Number": "CR No: 1387932", "Network": "GCC Wide" },
+      address: "Seeb Mabeela Industrial Area, P.O. Box 633, Postal Code: 620, Muscat, Sultanate of Oman",
+      contact: "gcc-sales@ysitkorea.com / +968-9192-9355"
     }
   ],
 
@@ -149,28 +149,33 @@ const YSIT_CATALOG_DATA = {
       logoType: "hyundai",
       description: "Complete replacement coverage across popular GCC and global passenger, SUV, and commercial fleets.",
       models: [
-        { name: "Accent", chassis: "RB / HC", years: "2011-2024", engines: "1.4L / 1.6L Gamma, Kappa", popularSystems: ["Braking", "Suspension", "Steering", "Cooling"] },
         { name: "Elantra", chassis: "MD / AD / CN7", years: "2011-2025", engines: "1.6L / 2.0L Nu, Smartstream", popularSystems: ["Suspension Control Arms", "Brake Discs", "Engine Mounts"] },
-        { name: "Sonata", chassis: "YF / LF / DN8", years: "2010-2024", engines: "2.0L / 2.4L Theta II, 2.5L Smartstream", popularSystems: ["Hydraulic Mountings", "Water Pumps", "Tie Rods"] },
+        { name: "Sonata", chassis: "YF / LF / DN8", years: "2010-2025", engines: "2.0L / 2.4L Theta II, 2.5L", popularSystems: ["Hydraulic Mountings", "Water Pumps", "Tie Rods"] },
+        { name: "Accent", chassis: "RB / HC", years: "2011-2025", engines: "1.4L / 1.6L Gamma, Kappa", popularSystems: ["Braking", "Suspension", "Steering", "Cooling"] },
         { name: "Tucson", chassis: "LM / TL / NX4", years: "2010-2025", engines: "2.0L / 2.4L / 1.6T GDI", popularSystems: ["Radiators", "AC Compressors", "Sway Bar Bushings"] },
         { name: "Santa Fe", chassis: "DM / TM / MX5", years: "2013-2025", engines: "2.4L / 3.3L / 3.5L V6 Lambda", popularSystems: ["Hub Bearings", "Ceramic Pads", "Suspension Arms"] },
-        { name: "Creta", chassis: "GS / SU2", years: "2015-2024", engines: "1.5L / 1.6L MPI", popularSystems: ["Shock Absorbers", "Brake Pads", "Overhaul Gaskets"] },
-        { name: "H-100 / Porter", chassis: "HR Series (Commercial)", years: "2004-2024", engines: "2.5L CRDi / TCI Diesel", popularSystems: ["Heavy Duty Ball Joints", "Water Pumps", "Brake Shoes"] }
+        { name: "Palisade", chassis: "LX2", years: "2019-2025", engines: "3.5L / 3.8L V6 Lambda II", popularSystems: ["Heavy Duty Brake Rotors", "Suspension Struts", "Cabin AC"] },
+        { name: "Creta & Kona", chassis: "GS / SU2 / OS", years: "2016-2025", engines: "1.5L / 1.6L / 2.0L MPI", popularSystems: ["Shock Absorbers", "Brake Pads", "Overhaul Gaskets"] },
+        { name: "Genesis Series (G70, G80, G90)", chassis: "IK / DH / RG3", years: "2015-2025", engines: "2.0T / 3.3T / 3.8L / 5.0L V8", popularSystems: ["Air Suspension", "Performance Ceramic Pads", "Sensors"] },
+        { name: "Grand Starex & Staria", chassis: "TQ / US4 (Van/Bus)", years: "2008-2025", engines: "2.5L CRDi Diesel / 3.5L V6", popularSystems: ["Heavy Duty Water Pumps", "Clutch Kits", "Hub Bearings"] },
+        { name: "H-100 / Porter", chassis: "HR Series (Commercial)", years: "2004-2025", engines: "2.5L CRDi / TCI Diesel", popularSystems: ["Heavy Duty Ball Joints", "Water Pumps", "Brake Shoes"] }
       ]
     },
     {
       brand: "Kia",
       badge: "Kia OEM Coverage",
       logoType: "kia",
-      description: "Direct OEM-tolerance components covering high-mileage urban sedans, family crossovers, and light commercial haulers.",
+      description: "Direct OEM-tolerance components covering high-mileage urban sedans, family crossovers, and commercial haulers.",
       models: [
-        { name: "Pegas", chassis: "AB", years: "2017-2024", engines: "1.4L Kappa MPI", popularSystems: ["Air & Oil Filters", "Brake Pads", "Tie Rod Ends"] },
-        { name: "Rio", chassis: "UB / YB", years: "2012-2024", engines: "1.4L / 1.6L Gamma", popularSystems: ["Control Arms", "Wheel Bearings", "Engine Mounts"] },
-        { name: "Cerato", chassis: "YD / BD", years: "2013-2025", engines: "1.6L / 2.0L Nu", popularSystems: ["Brake Pads", "Stabilizer Links", "Radiators"] },
+        { name: "Cerato / Forte", chassis: "YD / BD", years: "2013-2025", engines: "1.6L / 2.0L Nu", popularSystems: ["Brake Pads", "Stabilizer Links", "Radiators"] },
         { name: "Optima / K5", chassis: "TF / JF / DL3", years: "2011-2025", engines: "2.0L / 2.4L Theta, 2.5L", popularSystems: ["Hydraulic Bushings", "Compressors", "Gaskets"] },
+        { name: "Rio & Pegas", chassis: "UB / YB / AB", years: "2012-2025", engines: "1.4L / 1.6L Gamma, Kappa", popularSystems: ["Control Arms", "Wheel Bearings", "Engine Mounts"] },
         { name: "Sportage", chassis: "SL / QL / NQ5", years: "2010-2025", engines: "2.0L / 2.4L / 1.6T", popularSystems: ["Heavy-Duty Suspension", "Brake Rotors", "Cooling"] },
         { name: "Sorento", chassis: "XM / UM / MQ4", years: "2011-2025", engines: "2.4L / 3.3L / 3.5L V6", popularSystems: ["Hub Assemblies", "Ceramic Pads", "Water Pumps"] },
-        { name: "Bongo", chassis: "PU Series (Commercial)", years: "2004-2024", engines: "2.5L / 2.7L / 2.9L J3 Diesel", popularSystems: ["King Pins", "Lower Arms", "Heavy-Duty Clutch Discs"] }
+        { name: "Telluride & Carnival", chassis: "ON / YP / KA4", years: "2015-2025", engines: "3.3L / 3.5L / 3.8L V6 Lambda", popularSystems: ["Front & Rear Discs", "Hydromounts", "Alternators"] },
+        { name: "Cadenza / K8 & K900", chassis: "VG / YG / GL3", years: "2012-2025", engines: "3.3L / 3.5L / 5.0L V8", popularSystems: ["Active Struts", "Premium Ceramic Friction", "Sensors"] },
+        { name: "Seltos, Soul & Stonic", chassis: "SP2 / SK3 / YB", years: "2014-2025", engines: "1.4T / 1.6L / 2.0L Nu", popularSystems: ["Shock Absorbers", "Brake Pads", "Radiator Fans"] },
+        { name: "Bongo Series", chassis: "PU Series (Commercial)", years: "2004-2025", engines: "2.5L / 2.7L / 2.9L J3 Diesel", popularSystems: ["King Pins", "Lower Arms", "Heavy-Duty Clutch Discs"] }
       ]
     },
     {
@@ -295,12 +300,12 @@ const YSIT_CATALOG_DATA = {
   ],
 
   exportDestinations: [
-    { name: "Muscat / Sohar Port, Oman", transitDays: "12-14 Days", status: "Direct GCC Hub" },
+    { name: "Muscat / Sohar Port, Oman", transitDays: "12-14 Days", status: "Direct GCC Hub (Seeb Mabeela)" },
     { name: "Jebel Ali Port (Dubai), UAE", transitDays: "10-12 Days", status: "GCC Major Hub" },
     { name: "Jeddah Islamic Port / Dammam, Saudi Arabia", transitDays: "14-16 Days", status: "Active Corridor" },
     { name: "Shuwaikh / Shuaiba, Kuwait", transitDays: "15-18 Days", status: "Active Corridor" },
     { name: "Hamad Port, Qatar", transitDays: "12-14 Days", status: "Active Corridor" },
-    { name: "Pusan / Incheon, South Korea", transitDays: "HQ Dispatch", status: "OEM HQ Dispatch" },
+    { name: "Pusan / Incheon, South Korea", transitDays: "HQ Dispatch", status: "OEM HQ Dispatch (Hwaseong-Si)" },
     { name: "Ningbo / Guangzhou, China", transitDays: "Consolidation", status: "Direct Factory Hub" }
   ]
 };
