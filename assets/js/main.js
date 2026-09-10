@@ -143,7 +143,7 @@ function initTriRegionHubs() {
             <p class="text-xs sm:text-sm text-slate-600 font-medium mt-0.5">${hub.role}</p>
           </div>
           <div class="flex items-center gap-3">
-            <button onclick="prefillRfqDestination('${hub.city}')" class="px-4 py-2.5 text-xs font-bold text-white bg-slate-900 hover:bg-red-600 rounded-xl transition-all flex items-center gap-1.5 shadow-sm">
+            <button onclick="prefillRfqDestination('${hub.city}')" class="px-4 py-2.5 text-xs font-bold text-white bg-red-600 hover:bg-red-700 rounded-xl transition-all flex items-center gap-1.5 shadow-sm">
               <span>Route RFQ to this Hub</span>
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
             </button>
