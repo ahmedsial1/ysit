@@ -1,0 +1,24 @@
+{
+  "name": "ysit-genuine-parts",
+  "version": "1.0.0",
+  "private": true,
+  "description": "YSIT Genuine Parts (ysitkorea.com) - Ultra-professional Korean OEM automotive parts web platform.",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve .",
+    "dev": "npx serve .",
+    "build": "echo 'Static build ready for deployment'"
+  },
+  "keywords": [
+    "ysit",
+    "ysit-genuine-parts",
+    "korean-auto-parts",
+    "hyundai-parts",
+    "kia-parts",
+    "b2b-automotive",
+    "oem-replacement",
+    "oman-gcc-auto-parts"
+  ],
+  "author": "YSIT Korea Co., Ltd.",
+  "license": "UNLICENSED"
+}
