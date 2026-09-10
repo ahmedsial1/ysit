@@ -115,8 +115,8 @@ function initTriRegionHubs() {
       if (!hubData) return;
 
       // Update active card styling
-      hubCards.forEach(c => c.classList.remove('region-card-active', 'border-red-600', 'bg-red-50/50'));
-      card.classList.add('region-card-active', 'border-red-600');
+      hubCards.forEach(c => c.classList.remove('region-card-active', 'border-blue-700', 'bg-blue-50/50'));
+      card.classList.add('region-card-active', 'border-blue-700');
 
       // Render detail view
       renderHubDetail(hubData);
@@ -133,7 +133,7 @@ function initTriRegionHubs() {
 
     const entityHtml = hub.entity ? `
       <div class="inline-flex items-center gap-1.5 px-3 py-1 bg-slate-100 border border-slate-200 text-slate-800 text-xs font-bold rounded-lg mb-2">
-        <i data-lucide="building-2" class="w-3.5 h-3.5 text-red-600"></i>
+        <i data-lucide="building-2" class="w-3.5 h-3.5 text-blue-700"></i>
         <span>${hub.entity}</span>
       </div>
     ` : '';
@@ -143,8 +143,8 @@ function initTriRegionHubs() {
         <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-200 pb-5 mb-5">
           <div>
             <div class="flex flex-wrap items-center gap-2 mb-2">
-              <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-bold bg-red-100 border border-red-200 text-red-700">
-                <span class="w-1.5 h-1.5 rounded-full bg-red-600 animate-ping"></span>
+              <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-bold bg-blue-100 border border-blue-200 text-blue-800">
+                <span class="w-1.5 h-1.5 rounded-full bg-blue-700 animate-ping"></span>
                 ${hub.badge}
               </span>
               ${entityHtml}
@@ -153,7 +153,7 @@ function initTriRegionHubs() {
             <p class="text-xs sm:text-sm text-slate-600 font-medium mt-1">${hub.role}</p>
           </div>
           <div class="flex items-center gap-3">
-            <button onclick="prefillRfqDestination('${hub.city}')" class="px-5 py-3 text-xs font-bold text-white bg-red-600 hover:bg-red-700 rounded-xl transition-all flex items-center gap-1.5 shadow-md">
+            <button onclick="prefillRfqDestination('${hub.city}')" class="px-5 py-3 text-xs font-bold text-white bg-blue-700 hover:bg-blue-800 rounded-xl transition-all flex items-center gap-1.5 shadow-md">
               <span>Route Inquiry to this Hub</span>
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
             </button>
@@ -173,7 +173,7 @@ function initTriRegionHubs() {
           </div>
           <div class="flex items-center gap-2">
             <span class="text-slate-400">Direct Desk Dispatch:</span>
-            <span class="text-red-600 font-bold">${hub.contact}</span>
+            <span class="text-blue-700 font-bold">${hub.contact}</span>
           </div>
         </div>
       </div>
@@ -244,16 +244,16 @@ function initRfqEngine() {
   function switchRfqTab(tabKey) {
     rfqState.activeTab = tabKey;
     if (tabKey === 'fast-search') {
-      tabBtnFast.classList.add('bg-red-600', 'text-white', 'shadow-md');
+      tabBtnFast.classList.add('bg-blue-700', 'text-white', 'shadow-md');
       tabBtnFast.classList.remove('text-slate-600', 'hover:text-slate-900', 'bg-slate-100');
-      tabBtnBulk.classList.remove('bg-red-600', 'text-white', 'shadow-md');
+      tabBtnBulk.classList.remove('bg-blue-700', 'text-white', 'shadow-md');
       tabBtnBulk.classList.add('text-slate-600', 'hover:text-slate-900', 'bg-slate-100');
       tabContentFast.classList.remove('hidden');
       tabContentBulk.classList.add('hidden');
     } else {
-      tabBtnBulk.classList.add('bg-red-600', 'text-white', 'shadow-md');
+      tabBtnBulk.classList.add('bg-blue-700', 'text-white', 'shadow-md');
       tabBtnBulk.classList.remove('text-slate-600', 'hover:text-slate-900', 'bg-slate-100');
-      tabBtnFast.classList.remove('bg-red-600', 'text-white', 'shadow-md');
+      tabBtnFast.classList.remove('bg-blue-700', 'text-white', 'shadow-md');
       tabBtnFast.classList.add('text-slate-600', 'hover:text-slate-900', 'bg-slate-100');
       tabContentBulk.classList.remove('hidden');
       tabContentFast.classList.add('hidden');
@@ -286,7 +286,7 @@ function initRfqEngine() {
         oemSuggestions.innerHTML = matches.slice(0, 5).map(item => `
           <div class="p-3 hover:bg-slate-50 cursor-pointer border-b border-slate-100 transition-colors" data-oem="${item.oem}">
             <div class="flex items-center justify-between">
-              <span class="font-mono-code font-bold text-red-600 text-xs sm:text-sm">${item.oem}</span>
+              <span class="font-mono-code font-bold text-blue-700 text-xs sm:text-sm">${item.oem}</span>
               <span class="text-[11px] px-2 py-0.5 rounded bg-slate-100 text-slate-600 font-medium">${item.category}</span>
             </div>
             <div class="text-xs text-slate-900 font-bold mt-1">${item.name}</div>
@@ -407,7 +407,7 @@ function renderPartsBasket() {
         </span>
         <div>
           <div class="flex flex-wrap items-center gap-2">
-            <span class="font-mono-code text-xs sm:text-sm font-bold text-red-600 bg-red-50 px-2 py-0.5 rounded border border-red-200">${p.oem}</span>
+            <span class="font-mono-code text-xs sm:text-sm font-bold text-blue-700 bg-blue-50 px-2 py-0.5 rounded border border-blue-200">${p.oem}</span>
             <span class="text-xs sm:text-sm text-slate-900 font-bold">${p.desc}</span>
           </div>
           <div class="text-xs text-slate-500 mt-1 flex items-center gap-2">
@@ -422,7 +422,7 @@ function renderPartsBasket() {
           <span class="text-xs font-bold text-slate-900 font-mono-code">${p.qty}</span>
           <span class="text-[11px] text-slate-500">${p.unit}</span>
         </div>
-        <button onclick="removeRfqPart(${p.id})" class="text-slate-400 hover:text-red-600 p-1 rounded hover:bg-red-50 transition-colors" title="Remove part">
+        <button onclick="removeRfqPart(${p.id})" class="text-slate-400 hover:text-rose-600 p-1 rounded hover:bg-rose-50 transition-colors" title="Remove part">
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
         </button>
       </div>
@@ -447,14 +447,14 @@ function initBulkDropzone() {
   ['dragenter', 'dragover'].forEach(eventName => {
     dropzone.addEventListener(eventName, (e) => {
       e.preventDefault();
-      dropzone.classList.add('dropzone-active', 'border-red-500');
+      dropzone.classList.add('dropzone-active', 'border-blue-600');
     });
   });
 
   ['dragleave', 'drop'].forEach(eventName => {
     dropzone.addEventListener(eventName, (e) => {
       e.preventDefault();
-      dropzone.classList.remove('dropzone-active', 'border-red-500');
+      dropzone.classList.remove('dropzone-active', 'border-blue-600');
     });
   });
 
@@ -508,7 +508,7 @@ function initBulkDropzone() {
     previewContainer.innerHTML = rfqState.bulkFiles.map(f => `
       <div class="flex items-center justify-between p-3 bg-white border border-slate-200 shadow-sm rounded-xl">
         <div class="flex items-center gap-3">
-          <div class="w-8 h-8 rounded-lg bg-red-50 border border-red-200 flex items-center justify-center text-xs font-mono-code font-bold text-red-600">
+          <div class="w-8 h-8 rounded-lg bg-blue-50 border border-blue-200 flex items-center justify-center text-xs font-mono-code font-bold text-blue-700">
             ${f.type}
           </div>
           <div>
@@ -516,7 +516,7 @@ function initBulkDropzone() {
             <div class="text-[11px] text-slate-500">${f.size} • Ready for factory engineering quote</div>
           </div>
         </div>
-        <button onclick="removeBulkFile(${f.id})" class="text-slate-400 hover:text-red-600 p-1">
+        <button onclick="removeBulkFile(${f.id})" class="text-slate-400 hover:text-rose-600 p-1">
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
         </button>
       </div>
@@ -634,10 +634,10 @@ function initVehiclePlatforms() {
     btn.addEventListener('click', () => {
       const filter = btn.getAttribute('data-platform-filter');
       filterBtns.forEach(b => {
-        b.classList.remove('bg-red-600', 'text-white', 'shadow-sm');
+        b.classList.remove('bg-blue-700', 'text-white', 'shadow-sm');
         b.classList.add('bg-white', 'text-slate-700', 'border-slate-200');
       });
-      btn.classList.add('bg-red-600', 'text-white', 'shadow-sm');
+      btn.classList.add('bg-blue-700', 'text-white', 'shadow-sm');
       btn.classList.remove('bg-white', 'text-slate-700', 'border-slate-200');
 
       renderPlatformFleet(filter);
@@ -661,17 +661,17 @@ function initVehiclePlatforms() {
 
       if (isExpansion) {
         return `
-          <div class="col-span-1 lg:col-span-2 bg-gradient-to-r from-red-50 via-white to-slate-50 border-2 border-dashed border-red-300 rounded-3xl p-6 sm:p-8 relative overflow-hidden shadow-sm">
+          <div class="col-span-1 lg:col-span-2 bg-gradient-to-r from-blue-50 via-white to-slate-50 border-2 border-dashed border-blue-300 rounded-3xl p-6 sm:p-8 relative overflow-hidden shadow-sm">
             <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6 mb-6">
               <div>
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-red-600 text-white mb-3 shadow-sm">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-blue-700 text-white mb-3 shadow-sm">
                   <span class="w-2 h-2 rounded-full bg-white animate-pulse"></span>
                   STRATEGIC EXPANSION LINE
                 </div>
                 <h3 class="text-2xl font-black text-slate-900 tracking-tight">Chinese Automotive Platforms Replacement Program</h3>
                 <p class="text-slate-600 text-xs sm:text-sm max-w-2xl mt-1 font-normal">Expanding Tier-1 standard replacement engineering to the GCC's fastest growing vehicle segments with complete chassis, braking, and thermal systems.</p>
               </div>
-              <button onclick="prefillExpansionRfq()" class="px-5 py-3 text-xs font-bold uppercase tracking-wider text-white bg-red-600 hover:bg-red-700 rounded-xl shadow-md transition-all flex items-center justify-center gap-2">
+              <button onclick="prefillExpansionRfq()" class="px-5 py-3 text-xs font-bold uppercase tracking-wider text-white bg-blue-700 hover:bg-blue-800 rounded-xl shadow-md transition-all flex items-center justify-center gap-2">
                 <span>Inquire Chinese OEM Line</span>
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
               </button>
@@ -679,10 +679,10 @@ function initVehiclePlatforms() {
 
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3.5">
               ${p.models.map(m => `
-                <div class="bg-white border border-slate-200 rounded-2xl p-4 hover:border-red-400 hover:shadow-md transition-all">
+                <div class="bg-white border border-slate-200 rounded-2xl p-4 hover:border-blue-400 hover:shadow-md transition-all">
                   <div class="flex items-center justify-between mb-2">
                     <span class="text-base font-black text-slate-900">${m.name}</span>
-                    <span class="text-[10px] uppercase font-bold text-red-600 bg-red-50 px-2 py-0.5 rounded border border-red-200">OEM Focus</span>
+                    <span class="text-[10px] uppercase font-bold text-blue-700 bg-blue-50 px-2 py-0.5 rounded border border-blue-200">OEM Focus</span>
                   </div>
                   <div class="text-xs text-slate-700 font-semibold">${m.series}</div>
                   <div class="text-[11px] text-slate-500 mt-2">Coverage: <span class="text-slate-800 font-medium">${m.focus}</span></div>
@@ -712,12 +712,12 @@ function initVehiclePlatforms() {
                   <p class="text-xs text-slate-500 font-medium">1:1 Korean OEM Dimensional Compliance</p>
                 </div>
               </div>
-              <span class="px-2.5 py-1 rounded-full text-xs font-bold bg-slate-100 text-red-600 border border-slate-200">${p.models.length} Key Fleets</span>
+              <span class="px-2.5 py-1 rounded-full text-xs font-bold bg-slate-100 text-blue-700 border border-slate-200">${p.models.length} Key Fleets</span>
             </div>
 
             <div class="space-y-2.5 mb-6">
               ${p.models.map(m => `
-                <div class="p-3 rounded-xl bg-slate-50 border border-slate-200/80 hover:border-red-300 hover:bg-white transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                <div class="p-3 rounded-xl bg-slate-50 border border-slate-200/80 hover:border-blue-300 hover:bg-white transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-2">
                   <div>
                     <div class="flex items-center gap-2">
                       <span class="text-sm font-bold text-slate-900">${m.name}</span>
@@ -726,7 +726,7 @@ function initVehiclePlatforms() {
                     </div>
                     <div class="text-xs text-slate-500 mt-0.5 font-medium">Engines: ${m.engines}</div>
                   </div>
-                  <button onclick="prefillModelRfq('${p.brand} ${m.name}')" class="text-xs font-bold text-red-600 hover:text-white bg-white hover:bg-red-600 border border-red-200 hover:border-red-600 px-3 py-1.5 rounded-lg transition-colors self-start sm:self-auto flex items-center gap-1 shadow-sm">
+                  <button onclick="prefillModelRfq('${p.brand} ${m.name}')" class="text-xs font-bold text-blue-700 hover:text-white bg-white hover:bg-blue-700 border border-blue-200 hover:border-blue-700 px-3 py-1.5 rounded-lg transition-colors self-start sm:self-auto flex items-center gap-1 shadow-sm">
                     <span>Inquire Part</span>
                     <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
                   </button>
@@ -737,7 +737,7 @@ function initVehiclePlatforms() {
 
           <div class="pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
             <span>High-volume container batches available</span>
-            <button onclick="prefillModelRfq('${p.brand} All Models')" class="text-slate-900 font-bold hover:text-red-600 flex items-center gap-1">
+            <button onclick="prefillModelRfq('${p.brand} All Models')" class="text-slate-900 font-bold hover:text-blue-700 flex items-center gap-1">
               <span>Full ${p.brand} RFQ</span>
               <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
             </button>
@@ -808,7 +808,7 @@ function initProductSystems() {
       specModalContent.innerHTML = `
         <div class="space-y-5">
           <div class="p-4 bg-slate-50 border border-slate-200 rounded-2xl">
-            <h5 class="text-xs uppercase font-bold text-red-600 tracking-wider mb-1.5">Technical Description</h5>
+            <h5 class="text-xs uppercase font-bold text-blue-700 tracking-wider mb-1.5">Technical Description</h5>
             <p class="text-xs sm:text-sm text-slate-700 leading-relaxed">${sysData.shortDesc}</p>
           </div>
 
@@ -817,7 +817,7 @@ function initProductSystems() {
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
               ${sysData.components.map(c => `
                 <div class="p-2.5 rounded-xl bg-white border border-slate-200 text-xs text-slate-800 font-semibold flex items-center gap-2 shadow-sm">
-                  <span class="w-2 h-2 rounded-full bg-red-500"></span>
+                  <span class="w-2 h-2 rounded-full bg-blue-600"></span>
                   ${c}
                 </div>
               `).join('')}
@@ -836,14 +836,14 @@ function initProductSystems() {
             </ul>
           </div>
 
-          <div class="p-4 bg-red-50 border border-red-200 rounded-2xl">
-            <h5 class="text-xs uppercase font-bold text-red-700 tracking-wider mb-1">20+ Year GCC Climate Advantage</h5>
+          <div class="p-4 bg-blue-50 border border-blue-200 rounded-2xl">
+            <h5 class="text-xs uppercase font-bold text-blue-800 tracking-wider mb-1">20+ Year GCC Climate Advantage</h5>
             <p class="text-xs text-slate-700 leading-relaxed">${sysData.climateAdvantage}</p>
           </div>
 
           <div class="pt-4 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-3">
             <span class="text-xs font-mono-code text-slate-500 font-semibold">Sample OE Ref: ${sysData.featuredPart}</span>
-            <button onclick="prefillSystemFromModal('${sysData.title}')" class="w-full sm:w-auto px-5 py-2.5 text-xs font-bold text-white bg-red-600 hover:bg-red-700 rounded-xl transition-all shadow-md">
+            <button onclick="prefillSystemFromModal('${sysData.title}')" class="w-full sm:w-auto px-5 py-2.5 text-xs font-bold text-white bg-blue-700 hover:bg-blue-800 rounded-xl transition-all shadow-md">
               Inquire This System Now
             </button>
           </div>
@@ -935,17 +935,17 @@ function initQualityLab() {
       if (!data) return;
 
       labTabs.forEach(t => {
-        t.classList.remove('bg-red-600', 'text-white', 'shadow-sm');
+        t.classList.remove('bg-blue-700', 'text-white', 'shadow-sm');
         t.classList.add('bg-white', 'text-slate-700', 'border-slate-200');
       });
-      tab.classList.add('bg-red-600', 'text-white', 'shadow-sm');
+      tab.classList.add('bg-blue-700', 'text-white', 'shadow-sm');
       tab.classList.remove('bg-white', 'text-slate-700', 'border-slate-200');
 
       labDisplay.innerHTML = `
         <div class="p-6 sm:p-8 bg-white border border-slate-200 rounded-3xl shadow-sm">
           <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-100 pb-4 mb-5">
             <div>
-              <span class="text-xs font-mono font-bold text-red-600 uppercase tracking-wider">YSIT Verification Protocol</span>
+              <span class="text-xs font-mono font-bold text-blue-700 uppercase tracking-wider">YSIT Verification Protocol</span>
               <h4 class="text-xl font-black text-slate-900 mt-1">${data.title}</h4>
               <p class="text-xs text-slate-500 font-medium">${data.subtitle}</p>
             </div>
@@ -961,7 +961,7 @@ function initQualityLab() {
             ${data.metrics.map(m => `
               <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200/80 shadow-sm">
                 <div class="text-[11px] text-slate-500 uppercase tracking-wider font-semibold">${m.label}</div>
-                <div class="text-xl font-black font-mono mt-1 text-red-600">${m.val}</div>
+                <div class="text-xl font-black font-mono mt-1 text-blue-700">${m.val}</div>
               </div>
             `).join('')}
           </div>
@@ -981,8 +981,8 @@ function initLanguageSwitcher() {
       const lang = btn.getAttribute('data-lang');
       const langName = lang === 'ko' ? '한국어 (Korean)' : lang === 'ar' ? 'العربية (Arabic)' : 'English (Global)';
       
-      langBtns.forEach(b => b.classList.remove('text-red-600', 'font-bold'));
-      btn.classList.add('text-red-600', 'font-bold');
+      langBtns.forEach(b => b.classList.remove('text-blue-700', 'font-bold'));
+      btn.classList.add('text-blue-700', 'font-bold');
 
       if (lang === 'ar') {
         showToast(`Language set to ${langName}. OEM RFQ forms support Arabic procurement requests.`, 'info');
@@ -1053,7 +1053,7 @@ function openQuoteModal(source) {
           ${rfqState.parts.map((p, i) => `
             <tr class="hover:bg-slate-50 transition-colors">
               <td class="p-3 font-semibold">${i + 1}</td>
-              <td class="p-3 font-mono-code font-bold text-red-600">${p.oem}</td>
+              <td class="p-3 font-mono-code font-bold text-blue-700">${p.oem}</td>
               <td class="p-3 font-bold">${p.desc}</td>
               <td class="p-3 text-slate-600">${p.model}</td>
               <td class="p-3 text-right font-mono-code font-bold">${p.qty} ${p.unit}</td>
@@ -1100,7 +1100,7 @@ function openQuoteModal(source) {
         ${itemsHtml}
       </div>
 
-      <div class="p-3 bg-red-50 border border-red-200 rounded-xl text-xs text-slate-700 flex items-center justify-between">
+      <div class="p-3 bg-blue-50 border border-blue-200 rounded-xl text-xs text-slate-700 flex items-center justify-between">
         <span class="font-medium">Korean OEM CAD & Metallurgical Compliance Guaranteed.</span>
         <span class="font-bold text-slate-900">Date: ${dateStr}</span>
       </div>
