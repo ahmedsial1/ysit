@@ -1,7 +1,7 @@
 /* ==========================================================================
    YSIT GENUINE PARTS - KOREAN OEM ENGINEERING WEB PLATFORM (LIGHT THEME)
    Visual Identity: Clean Engineering White (#FFFFFF), Cool Grey (#F8FAFC, #F1F5F9),
-   Racing Accent Red (#DC2626/#E11D48), High-Contrast Industrial Slate (#0F172A, #1E293B)
+   Corporate Dark Blue (#15509E / #0F3B7A / #1E3A8A), Industrial Slate (#0F172A, #1E293B)
    ========================================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@500;600;700;800;900&display=swap');
@@ -10,9 +10,9 @@
   --color-ysit-navy: #0F172A;
   --color-ysit-navy-dark: #0B121E;
   --color-ysit-blue-brand: #15509E;
-  --color-ysit-red: #DC2626;
-  --color-ysit-red-hover: #B91C1C;
-  --color-ysit-red-glow: rgba(220, 38, 38, 0.25);
+  --color-ysit-blue-dark: #0F3B7A;
+  --color-ysit-blue-hover: #1D4ED8;
+  --color-ysit-blue-glow: rgba(21, 80, 158, 0.25);
   --color-ysit-slate-bg: #F8FAFC;
   --color-ysit-slate-surface: #FFFFFF;
   --color-ysit-cyan: #0284C7;
@@ -53,7 +53,7 @@ body {
   border: 2px solid #F1F5F9;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #DC2626;
+  background: #15509E;
 }
 
 /* Engineering Blueprint & Grid Patterns (Light) */
@@ -77,7 +77,7 @@ body {
 }
 
 .bg-radial-gradient-hero {
-  background: radial-gradient(circle at 50% 10%, rgba(220, 38, 38, 0.06) 0%, rgba(248, 250, 252, 0.8) 50%, #F8FAFC 100%);
+  background: radial-gradient(circle at 50% 10%, rgba(21, 80, 158, 0.08) 0%, rgba(248, 250, 252, 0.8) 50%, #F8FAFC 100%);
 }
 
 /* Crisp Light Cards & Elevated Panels */
@@ -89,8 +89,8 @@ body {
 }
 
 .card-light-surface:hover {
-  border-color: #CBD5E1;
-  box-shadow: 0 12px 24px -6px rgba(15, 23, 42, 0.08), 0 4px 8px -2px rgba(15, 23, 42, 0.03);
+  border-color: #93C5FD;
+  box-shadow: 0 12px 24px -6px rgba(21, 80, 158, 0.1), 0 4px 8px -2px rgba(15, 23, 42, 0.03);
   transform: translateY(-2px);
 }
 
@@ -141,27 +141,27 @@ body {
   left: 0;
   width: 48px;
   height: 3px;
-  background: linear-gradient(90deg, #DC2626, transparent);
+  background: linear-gradient(90deg, #15509E, transparent);
   border-radius: 2px;
 }
 
 /* Buttons */
 .btn-ysit-primary {
-  background: linear-gradient(135deg, #DC2626 0%, #B91C1C 100%);
+  background: linear-gradient(135deg, #15509E 0%, #0F3B7A 100%);
   color: #FFFFFF;
-  box-shadow: 0 4px 14px rgba(220, 38, 38, 0.3);
+  box-shadow: 0 4px 14px rgba(21, 80, 158, 0.3);
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .btn-ysit-primary:hover {
-  background: linear-gradient(135deg, #EF4444 0%, #DC2626 100%);
-  box-shadow: 0 6px 20px rgba(220, 38, 38, 0.4);
+  background: linear-gradient(135deg, #1D4ED8 0%, #15509E 100%);
+  box-shadow: 0 6px 20px rgba(21, 80, 158, 0.4);
   transform: translateY(-1px);
 }
 
 .btn-ysit-primary:active {
   transform: translateY(1px);
-  box-shadow: 0 2px 8px rgba(220, 38, 38, 0.25);
+  box-shadow: 0 2px 8px rgba(21, 80, 158, 0.25);
 }
 
 .btn-ysit-secondary {
@@ -174,16 +174,16 @@ body {
 
 .btn-ysit-secondary:hover {
   background: #F8FAFC;
-  border-color: #94A3B8;
-  color: #DC2626;
+  border-color: #15509E;
+  color: #15509E;
   transform: translateY(-1px);
 }
 
 /* Region Card Active States */
 .region-card-active {
-  border-color: #DC2626 !important;
-  background: linear-gradient(180deg, #FFF1F2 0%, #FFFFFF 100%) !important;
-  box-shadow: 0 10px 25px -5px rgba(220, 38, 38, 0.12) !important;
+  border-color: #15509E !important;
+  background: linear-gradient(180deg, #EFF6FF 0%, #FFFFFF 100%) !important;
+  box-shadow: 0 10px 25px -5px rgba(21, 80, 158, 0.15) !important;
 }
 
 /* Part Number Code Badges */
@@ -199,8 +199,8 @@ body {
 
 /* Drag and Drop Zone */
 .dropzone-active {
-  border-color: #DC2626 !important;
-  background-color: #FEF2F2 !important;
+  border-color: #15509E !important;
+  background-color: #EFF6FF !important;
 }
 
 /* Modals */

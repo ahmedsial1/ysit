@@ -115,8 +115,8 @@ function initTriRegionHubs() {
       if (!hubData) return;
 
       // Update active card styling
-      hubCards.forEach(c => c.classList.remove('region-card-active', 'border-red-600', 'bg-red-50/50'));
-      card.classList.add('region-card-active', 'border-red-600');
+      hubCards.forEach(c => c.classList.remove('region-card-active', 'border-blue-700', 'bg-blue-50/50'));
+      card.classList.add('region-card-active', 'border-blue-700');
 
       // Render detail view
       renderHubDetail(hubData);
@@ -133,7 +133,7 @@ function initTriRegionHubs() {
 
     const entityHtml = hub.entity ? `
       <div class="inline-flex items-center gap-1.5 px-3 py-1 bg-slate-100 border border-slate-200 text-slate-800 text-xs font-bold rounded-lg mb-2">
-        <i data-lucide="building-2" class="w-3.5 h-3.5 text-red-600"></i>
+        <i data-lucide="building-2" class="w-3.5 h-3.5 text-blue-700"></i>
         <span>${hub.entity}</span>
       </div>
     ` : '';
@@ -143,8 +143,8 @@ function initTriRegionHubs() {
         <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-200 pb-5 mb-5">
           <div>
             <div class="flex flex-wrap items-center gap-2 mb-2">
-              <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-bold bg-red-100 border border-red-200 text-red-700">
-                <span class="w-1.5 h-1.5 rounded-full bg-red-600 animate-ping"></span>
+              <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-bold bg-blue-100 border border-blue-200 text-blue-800">
+                <span class="w-1.5 h-1.5 rounded-full bg-blue-700 animate-ping"></span>
                 ${hub.badge}
               </span>
               ${entityHtml}
@@ -153,7 +153,7 @@ function initTriRegionHubs() {
             <p class="text-xs sm:text-sm text-slate-600 font-medium mt-1">${hub.role}</p>
           </div>
           <div class="flex items-center gap-3">
-            <button onclick="prefillRfqDestination('${hub.city}')" class="px-5 py-3 text-xs font-bold text-white bg-red-600 hover:bg-red-700 rounded-xl transition-all flex items-center gap-1.5 shadow-md">
+            <button onclick="prefillRfqDestination('${hub.city}')" class="px-5 py-3 text-xs font-bold text-white bg-blue-700 hover:bg-blue-800 rounded-xl transition-all flex items-center gap-1.5 shadow-md">
               <span>Route Inquiry to this Hub</span>
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
             </button>
@@ -173,7 +173,7 @@ function initTriRegionHubs() {
           </div>
           <div class="flex items-center gap-2">
             <span class="text-slate-400">Direct Desk Dispatch:</span>
-            <span class="text-red-600 font-bold">${hub.contact}</span>
+            <span class="text-blue-700 font-bold">${hub.contact}</span>
           </div>
         </div>
       </div>
@@ -244,16 +244,16 @@ function initRfqEngine() {
   function switchRfqTab(tabKey) {
     rfqState.activeTab = tabKey;
     if (tabKey === 'fast-search') {
-      tabBtnFast.classList.add('bg-red-600', 'text-white', 'shadow-md');
+      tabBtnFast.classList.add('bg-blue-700', 'text-white', 'shadow-md');
       tabBtnFast.classList.remove('text-slate-600', 'hover:text-slate-900', 'bg-slate-100');
-      tabBtnBulk.classList.remove('bg-red-600', 'text-white', 'shadow-md');
+      tabBtnBulk.classList.remove('bg-blue-700', 'text-white', 'shadow-md');
       tabBtnBulk.classList.add('text-slate-600', 'hover:text-slate-900', 'bg-slate-100');
       tabContentFast.classList.remove('hidden');
       tabContentBulk.classList.add('hidden');
     } else {
-      tabBtnBulk.classList.add('bg-red-600', 'text-white', 'shadow-md');
+      tabBtnBulk.classList.add('bg-blue-700', 'text-white', 'shadow-md');
       tabBtnBulk.classList.remove('text-slate-600', 'hover:text-slate-900', 'bg-slate-100');
-      tabBtnFast.classList.remove('bg-red-600', 'text-white', 'shadow-md');
+      tabBtnFast.classList.remove('bg-blue-700', 'text-white', 'shadow-md');
       tabBtnFast.classList.add('text-slate-600', 'hover:text-slate-900', 'bg-slate-100');
       tabContentBulk.classList.remove('hidden');
       tabContentFast.classList.add('hidden');
